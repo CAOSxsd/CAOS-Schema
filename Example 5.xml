@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CAOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/Melissa/Documents/MLIS%20School%20Work/Fall%202018/562%20Metadata%20Theory/Metadata%20Schema%20Creation%20Final%20Project/CAOS%20XSD%20Document%20FINAL.xsd">
+    <ArtistMetadata accountSource="Instagram">
+        <ArtistIdentifier accountSource="Instagram">
+            <ArtistIdentifierType>username</ArtistIdentifierType>
+            <ArtistIdentifierValue>@armandoveve</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistDiscipline termSource="AAT" termSourceID="300054200">illustration (process)</ArtistDiscipline>
+        <LinkedInstitution infoSource="Instagram">
+            <InstitutionType>International Artists Management Agency</InstitutionType>
+            <InstitutionValue>LEVINE/LEAVITT</InstitutionValue>
+        </LinkedInstitution>
+        <ArtistValue>up and coming artist of interest</ArtistValue>
+        <DisplayedAccountInformation accountSource="">
+            <DateAccessed>12-10-2018 T 22:00:25</DateAccessed>
+            <ContentFollowers>8780</ContentFollowers>
+            <ContentFollowing>1183</ContentFollowing>
+            <ContentPosts>234</ContentPosts>
+        </DisplayedAccountInformation>
+        <ArtistSuppliedBioDescription accountSource="Instagram">
+            <BioDescriptionDateAccess>12-10-2018 T 22:02:34</BioDescriptionDateAccess>
+            <BioDescriptionValue>Philadelphia-based illustrator.; armandoveve.com</BioDescriptionValue>
+        </ArtistSuppliedBioDescription>
+        <ArtistSuppliedBioDescription accountSource="website">
+            <BioDescriptionDateAccess>12-10-2018 T 22:05:00</BioDescriptionDateAccess>
+            <BioDescriptionValue>Armando Veve (b. 1989) is an artist and illustrator working in Philadelphia. His drawings have been recognized by American Illustration, 
+                Communication Arts, Spectrum, and awarded two gold medals from the Society of Illustrators. He was named an ADC Young Gun by The One Club for Creativity 
+                and selected to the Forbes 2018 30 under 30 list. </BioDescriptionValue>
+        </ArtistSuppliedBioDescription>
+        <ArtistRelationships>
+            <ArtistRelationshipType>has website</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>website</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>http://armandoveve.com/</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>http://armandoveve.com/</ArtistRelationshipLinkingURL>
+            </ArtistRelationshipLinkingAgent>
+            <RelationshipLinkingObject>
+                <RelationshipLinkingObjectType>illustration</RelationshipLinkingObjectType>
+                <RelationshipLinkingObjectValue>Love Potion </RelationshipLinkingObjectValue>
+                <RelationshipLinkingObjectURL>http://armandoveve.com/works/LovePotion/</RelationshipLinkingObjectURL>
+                <RelationshipLinkingNote>Piece commissioned by 360i Agency for Absolut Vodka</RelationshipLinkingNote>
+            </RelationshipLinkingObject>
+        </ArtistRelationships>
+    </ArtistMetadata>
+    <SocialMediaPostMetadata accountSource="Instagram">
+        <PostIdentifier>
+            <PostIdentifierType>URL</PostIdentifierType>
+            <PostIdentifierValue>https://www.instagram.com/p/Bow1ngFjihu/</PostIdentifierValue>
+            <!-- What is the difference between accountSource and infoSource maybe I should use account below -->
+        </PostIdentifier>
+        <PostIdentifier infoSource="Instagram">
+            <PostIdentifierType>fb:app_ID</PostIdentifierType>
+            <PostIdentifierValue>124024574287414</PostIdentifierValue>
+        </PostIdentifier>
+        <PostType>Illustration</PostType>
+        <!-- needs to be added to the list   -->
+        <PostDateCreation>October 10, 2018</PostDateCreation>
+        <Events>
+            <EventType>was published</EventType>
+            <EventSignificance>The artist's work was comissioned, published in print, and then made into a mural</EventSignificance>
+        </Events>
+        <PostLanguage lang="English" langTermSource="ISO-639-2"></PostLanguage>
+        <PostDescription>
+            <PostTitle>Excited to share a new drawing commissioned by @360i for @absolutvodka_us newest campaign 'Love Doesn't Follow a Recipe,' 
+                in support of love in all flavors. I grew up with Absolut's iconic bottle ads from the 80's and 90's, and it's an honor to be able 
+                to contribute to this historic campaign. Huge thanks to the folks at @360i for trusting and defending my vision, @absolutvodkaus, 
+                and @llreps for making this all happen. If you're in NYC, @colossalmedia translated my drawing into a mural at Lafayette and Howard. 
+                Send me pics if you see it in the wild! #transparency #allflavorswelcome #iloveyou</PostTitle>
+            <PostDescriptionHastags>#allflavorswelcome; #iloveyou</PostDescriptionHastags>
+            <!-- should these be separate or together? -->
+            <PostDescriptionLinks></PostDescriptionLinks>
+        </PostDescription>
+        <PostDescriptionMetadata>
+            <PostMetadataDateAccessed>12-10-2018 T 22:20:22</PostMetadataDateAccessed>
+            <PostLikes>1171</PostLikes>
+        </PostDescriptionMetadata>
+            <ObjectMetadata>
+                <ArtType termSource="AAT" termSourceID="300054200">illustration (process)</ArtType>
+                <Medium termSource="AAT" termSourceID="300054196">drawing (image-making)</Medium>
+            <ObjectSignificance>This post documents the finished piece Love Potion, which was comissioned by 360i for Absolut Vodka and then translated into a 
+            a mural by the artist group Colossal Media in New York City at Lafayette and Howard St. </ObjectSignificance>
+            <ObjectContributor>
+                <ObjectContributorType>artist group</ObjectContributorType>
+                <objectContributorValue>Colossal Media</objectContributorValue>
+                <ObjectContributorURL>http://colossalmedia.com</ObjectContributorURL>
+            </ObjectContributor>
+            <ObjectLocation>
+                <ObjectLocationType>location of mural</ObjectLocationType>
+                <ObjectLocationValue>corner of Lafayette and Howard streets in New York City, SoHo neighborhood.</ObjectLocationValue>
+            </ObjectLocation>
+            <PostRelationships>
+                <PostRelationshipType>comissioned by</PostRelationshipType>
+                <PostRelationshipLinkingAgent>
+                    <PostRelationshipLinkingAgentType>Digital Marketing Agency</PostRelationshipLinkingAgentType>
+                    <PostRelationshipLinkingAgentValue>360i</PostRelationshipLinkingAgentValue>
+                    <PostRelationshipLinkingAgentURL>https://360i.com/</PostRelationshipLinkingAgentURL>
+                </PostRelationshipLinkingAgent>
+            </PostRelationships>
+            <PostRelationships>
+                <PostRelationshipType>comissioned for</PostRelationshipType>
+                    <PostRelationshipLinkingAgent>
+                        <PostRelationshipLinkingAgentType>company</PostRelationshipLinkingAgentType>
+                        <PostRelationshipLinkingAgentValue>ABSOLUT Vodka US</PostRelationshipLinkingAgentValue>
+                        <PostRelationshipLinkingAgentURL>https://www.absolut.com/us</PostRelationshipLinkingAgentURL>
+                    </PostRelationshipLinkingAgent>
+            </PostRelationships>
+            <PostRelationships>
+                <PostRelationshipType>translated by</PostRelationshipType>
+                    <PostRelationshipLinkingAgent>
+                        <PostRelationshipLinkingAgentType>Advertising Artist Group</PostRelationshipLinkingAgentType>
+                        <PostRelationshipLinkingAgentValue>Colossal Media</PostRelationshipLinkingAgentValue>
+                        <PostRelationshipLinkingAgentURL>http://colossalmedia.com/</PostRelationshipLinkingAgentURL>
+                        <PostRelationshipNote>This group was responsible for creating the mural version of the piece.</PostRelationshipNote>
+                    </PostRelationshipLinkingAgent>
+            </PostRelationships>
+            <PostRelationships>
+                <PostRelationshipType>represented by</PostRelationshipType>
+                <PostRelationshipLinkingObject>
+                    <PostRelationshipLinkingObjectType>International Artists Management Agency</PostRelationshipLinkingObjectType>
+                    <PostRelationshipLinkingObjectValue>LEVINE/LEAVITT</PostRelationshipLinkingObjectValue>
+                    <PostRelationshipLinkingObjectURL>https://levineleavitt.com/</PostRelationshipLinkingObjectURL>
+                    <PostRelationshipNote>This agency represents the artist.</PostRelationshipNote>
+                </PostRelationshipLinkingObject>
+            </PostRelationships>
+        </ObjectMetadata>
+    </SocialMediaPostMetadata>
+    <AdministrativeMetadata>
+        <AdministrativeRights>
+            <AdministrativeRightsType>coypright</AdministrativeRightsType>
+            <AdministrativeRightsValue>©2018 Imported by Absolut Spirits Co. New York, NY.</AdministrativeRightsValue>
+        </AdministrativeRights>
+    </AdministrativeMetadata>
+</CAOS>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CAOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/Melissa/Documents/MLIS%20School%20Work/Fall%202018/562%20Metadata%20Theory/Metadata%20Schema%20Creation%20Final%20Project/CAOS%20XSD%20Document%20FINAL.xsd">
+    <ArtistMetadata accountSource="Instagram">
+        <ArtistIdentifier accountSource="Instagram">
+            <ArtistIdentifierType>username</ArtistIdentifierType>
+            <ArtistIdentifierValue>@alexdacorte</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistIdentifier>
+            <ArtistIdentifierType>personal name</ArtistIdentifierType>
+            <ArtistIdentifierValue>Alex Da Corte</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistIdentifier accountSource="instagram">
+            <ArtistIdentifierType>ownder_user_id</ArtistIdentifierType>
+            <ArtistIdentifierValue>1374296</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistDiscipline termSource="AAT" termSourceID="300386236">multimedia artist</ArtistDiscipline>
+        <ArtistValue>up-and-coming artist of interest</ArtistValue>
+        <DisplayedAccountInformation accountSource="Instagram">
+            <DateAccessed>12-09-2018 T 17:31:00</DateAccessed>
+            <ContentFollowers>31000</ContentFollowers>
+            <ContentFollowing>1</ContentFollowing>
+            <ContentPosts>1894</ContentPosts>
+        </DisplayedAccountInformation>
+        <ArtistSuppliedBioDescription accountSource="Instagram">
+            <BioDescriptionDateAccess>12-09-2018 T 17:34:00</BioDescriptionDateAccess>
+            <BioDescriptionValue>alexdacorte, alexdacorte.com</BioDescriptionValue>
+        </ArtistSuppliedBioDescription>
+        <ArtistRelationships>
+            <ArtistRelationshipType>has website</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>website</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>alexdacorte.com</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>http://alexdacorte.com</ArtistRelationshipLinkingURL>
+                <ArtistRelationshipNote>This is the artist website</ArtistRelationshipNote>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+        <ArtistRelationships>
+            <ArtistRelationshipType>was Represented in</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>art gallery</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>Secession, Vienna, Austria</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>https://www.secession.at/en/</ArtistRelationshipLinkingURL>
+                <ArtistRelationshipNote>In 2017 Alex Da Corte had his artwork repsented in this art gallery. Exhibition title "Slow Graffiti".</ArtistRelationshipNote>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+    </ArtistMetadata>
+    <SocialMediaPostMetadata accountSource="Instagram">
+        <PostIdentifier>
+            <PostIdentifierType>URL</PostIdentifierType>
+            <PostIdentifierValue>https://www.instagram.com/p/BaPOKn9F2jW/</PostIdentifierValue>
+        </PostIdentifier>
+        <PostIdentifier infoSource="Instagram">
+            <PostIdentifierType>app_ID</PostIdentifierType>
+            <PostIdentifierValue>124024574287414</PostIdentifierValue>
+        </PostIdentifier>
+        <PostType>film still</PostType>
+        <PostDateCreation accountSource="Instagram">October 14, 2017</PostDateCreation>
+        <Events>
+            <EventType>review</EventType>
+            <EventSignificance>This post is referencing a review of the piece "Frankenstein"</EventSignificance>
+        </Events>
+        <PostLanguage lang="English" langTermSource="ISO-639-2">en</PostLanguage>
+        <PostDescription>
+            <PostTitle>@ghostwoodfox wrote a beautiful thing about Frankenstein. Link in bio.</PostTitle>
+            <PostDescriptionLinks>@ghostwoodfox</PostDescriptionLinks>
+        </PostDescription>
+        <PostDescriptionMetadata>
+            <PostMetadataDateAccessed>12-09-2018 T 17:43:00</PostMetadataDateAccessed>
+            <PostLikes>849</PostLikes>
+            <PostComments>
+                <PostCommentsNotes>There are 4 comments</PostCommentsNotes>
+            </PostComments>
+        </PostDescriptionMetadata>
+        <ObjectMetadata>
+            <ArtType termSource="AAT" termSourceID="300134997">film stills</ArtType>
+            <Medium termSource="AAT" termSourceID="300054141">film</Medium>
+            <ObjectSignificance>This image was referened in the review and part of a larger exhibit</ObjectSignificance>
+            <ObjectSubjects>
+                <ObjectSubjectValue subjectType="format">still image</ObjectSubjectValue>
+                <ObjectSubjectValue subjectType="topic">Frankentstein</ObjectSubjectValue>
+            </ObjectSubjects>
+            <ObjectPeople>
+                <ObjectPeopleType>model in image</ObjectPeopleType>
+                <ObjectPeopleValue>Alex Da Corte</ObjectPeopleValue>
+            </ObjectPeople>
+            <PostRelationships>
+                <PostRelationshipType>referenced by</PostRelationshipType>
+                <PostRelationshipLinkingAgent>
+                    <PostRelationshipLinkingAgentType>Critic</PostRelationshipLinkingAgentType>
+                    <PostRelationshipLinkingAgentValue>Charlie Fox</PostRelationshipLinkingAgentValue>
+                    <PostRelationshipLinkingAgentURL>https://www.nowness.com/series/rambling/charlie-fox-joseph-delaney-this-young-monster</PostRelationshipLinkingAgentURL>
+                    <PostRelationshipNote>Alex Da Corte's piece "Frankenstein" was referenced in Charlie's Fox review "Why Frakenstein's Monster Haunts Queer Art"</PostRelationshipNote>
+                </PostRelationshipLinkingAgent>
+            </PostRelationships>
+            <PostRelationships>
+                <PostRelationshipType>is Part of</PostRelationshipType>
+                <PostRelationshipLinkingObject>
+                    <PostRelationshipLinkingObjectType>Exhibition</PostRelationshipLinkingObjectType>
+                    <PostRelationshipLinkingObjectValue>Slow Graffiti</PostRelationshipLinkingObjectValue>
+                    <PostRelationshipNote>The film still in this post is part of Alex Da Corte's larger exhibition "Slow Graffiti"</PostRelationshipNote>
+                </PostRelationshipLinkingObject>
+            </PostRelationships>
+        </ObjectMetadata>
+    </SocialMediaPostMetadata>
+    <AdministrativeMetadata>
+        <AdministrativeRights>
+            <AdministrativeRightsType>copyright</AdministrativeRightsType>
+            <AdministrativeRightsValue>(c)AlexDaCorte2017</AdministrativeRightsValue>
+        </AdministrativeRights>
+    </AdministrativeMetadata>
+</CAOS>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CAOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/Melissa/Documents/MLIS%20School%20Work/Fall%202018/562%20Metadata%20Theory/Metadata%20Schema%20Creation%20Final%20Project/CAOS%20XSD%20Document%20FINAL.xsd">
+    <ArtistMetadata accountSource="Instagram">
+        <ArtistIdentifier accountSource="Instagram">
+            <ArtistIdentifierType>username</ArtistIdentifierType>
+            <ArtistIdentifierValue>@hibbledygibldy</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistIdentifier>
+            <ArtistIdentifierType>personal name</ArtistIdentifierType>
+            <ArtistIdentifierValue>Paul Wackers</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistIdentifier accountSource="Instagram">
+            <ArtistIdentifierType>owner_user_id</ArtistIdentifierType>
+            <ArtistIdentifierValue>198616060</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistDiscipline termSource="AAT" termSourceID="300054216">painting (image-making)</ArtistDiscipline>
+        <LinkedInstitution infoSource="artist's website">
+            <InstitutionType>gallery</InstitutionType>
+            <InstitutionValue>Eleanor Harwood Gallery</InstitutionValue>
+            <InstitutionAddress>1275 Minnesota Street, Suite 206 San Francisco, CA 94107</InstitutionAddress>
+        </LinkedInstitution>
+        <ArtistValue>up and coming artist of interest</ArtistValue>
+        <DisplayedAccountInformation accountSource="Instagram">
+            <DateAccessed>12-10-2018 T 20:15:35</DateAccessed>
+            <ContentFollowers>16400</ContentFollowers>
+            <ContentFollowing>1195</ContentFollowing>
+            <ContentPosts>4225</ContentPosts>
+        </DisplayedAccountInformation>
+        <ArtistSuppliedBioDescription accountSource="Instagram">
+            <BioDescriptionDateAccess>12-10-2018</BioDescriptionDateAccess>
+            <BioDescriptionValue>Paul Wackers; #paulwackers @hibbledygibldy; www.paulwackers.com</BioDescriptionValue>
+        </ArtistSuppliedBioDescription>
+        <ArtistRelationships>
+            <ArtistRelationshipType>gallery</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>is Represented in</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>ALICE Gallery</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>https://alicebxl.com/</ArtistRelationshipLinkingURL>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+        <ArtistRelationships>
+        <ArtistRelationshipType>has website</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>website</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>http://www.paulwackers.com/</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>http://www.paulwackers.com/</ArtistRelationshipLinkingURL>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+        <ArtistRelationships>
+        <ArtistRelationshipType>social media account</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+            <ArtistRelationshipLinkingAgentType>Tumblr</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>THINGS SEEN AND DONE</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>http://possibleinfluence.tumblr.com/</ArtistRelationshipLinkingURL>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+        <ArtistRelationships>
+            <ArtistRelationshipType>has Artwork objet</ArtistRelationshipType>
+        <RelationshipLinkingObject>
+                <RelationshipLinkingObjectType>painting</RelationshipLinkingObjectType>
+                <RelationshipLinkingObjectValue>Quietly present in the space we share</RelationshipLinkingObjectValue>
+                <RelationshipLinkingNote>This painting has not been added to the artist's website yet; dimensions and detailed information
+                can be filled in later</RelationshipLinkingNote>
+            </RelationshipLinkingObject>
+        </ArtistRelationships>
+    </ArtistMetadata>
+    <SocialMediaPostMetadata accountSource="Instagram">
+        <PostIdentifier>
+            <PostIdentifierType>URL</PostIdentifierType>
+            <PostIdentifierValue>https://www.instagram.com/p/Bqp0BuTF_wY/</PostIdentifierValue>
+        </PostIdentifier>
+        <PostType>Painting</PostType>
+        <PostDateCreation>November 26, 2018</PostDateCreation>
+        <PostLanguage lang="English" langTermSource="ISO-639-2">en</PostLanguage>
+        <PostDescription>
+            <PostTitle>Quietly present in the space we share</PostTitle>
+        </PostDescription>
+        <PostDescriptionMetadata>
+            <PostMetadataDateAccessed>12-10-2018</PostMetadataDateAccessed>
+            <PostLikes>879</PostLikes>
+        </PostDescriptionMetadata>
+        <ObjectMetadata>
+            <ArtType termSource="AAT" termSourceID="300054216">painting (image-making)</ArtType>
+            <Medium termSource= "AAT" termSourceID="300015058">acrylic paint</Medium>
+            <Medium>spraypaint</Medium>
+            <MaterialsTechnique termSource="AAT" termSourceID="300182574">acrylic painting (technique) </MaterialsTechnique>
+            <MaterialsTechnique termSource="AAT" termSourceID= "300389855">wet on dry</MaterialsTechnique>
+            <MaterialsTechnique termSource="AAT" termSourceID="300053348">dry-brushing painting</MaterialsTechnique>
+            <ObjectSignificance>A new work in the artist's oeuvre that has not been added to their website yet</ObjectSignificance>
+        </ObjectMetadata>
+    </SocialMediaPostMetadata>
+    <AdministrativeMetadata>
+        <AdministrativeRights>
+            <AdministrativeRightsType>copyright</AdministrativeRightsType>
+            <AdministrativeRightsValue>©PaulWackers2018</AdministrativeRightsValue>
+        </AdministrativeRights>
+    </AdministrativeMetadata>
+</CAOS>

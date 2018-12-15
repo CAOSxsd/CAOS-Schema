@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CAOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/Melissa/Documents/MLIS%20School%20Work/Fall%202018/562%20Metadata%20Theory/Metadata%20Schema%20Creation%20Final%20Project/CAOS%20XSD%20Document%20FINAL.xsd">
+    <ArtistMetadata accountSource="Instagram">
+        <ArtistIdentifier accountSource="Instagram">
+            <ArtistIdentifierType>username</ArtistIdentifierType>
+            <ArtistIdentifierValue>@naissovibe</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistIdentifier accountSource="Instagram">
+            <ArtistIdentifierType>personal name</ArtistIdentifierType>
+            <ArtistIdentifierValue>Alain Giroux</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistDiscipline termSource="AAT" termSourceID="300411314">artist painters</ArtistDiscipline>
+        <ArtistDiscipline>International Artist</ArtistDiscipline>
+        <ArtistDiscipline>Electronic Musician</ArtistDiscipline>
+        <ArtistValue>up-and-coming artist of interest</ArtistValue>
+        <DisplayedAccountInformation accountSource="Instagram">
+            <DateAccessed>12-10-2018 T 20:33:00</DateAccessed>
+            <ContentFollowers>1573</ContentFollowers>
+            <ContentFollowing>3113</ContentFollowing>
+            <ContentPosts>135</ContentPosts>
+        </DisplayedAccountInformation>
+        <ArtistSuppliedBioDescription accountSource="Instagram">
+            <BioDescriptionDateAccess>12-10-2018 T 20:35:00</BioDescriptionDateAccess>
+            <BioDescriptionValue>Alain Giroux
+                Naissovibe.com - International Artist | Electronic Musician #gruabstract #naissovibe • Commissioned artwork and inquiries: @naissovibe
+                itunes.apple.com/ca/album/beat-wave/1330258514</BioDescriptionValue>
+        </ArtistSuppliedBioDescription>
+        <ArtistRelationships>
+            <ArtistRelationshipType>has website</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>website</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>Naissovibe.com</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>http://Naissovibe.com</ArtistRelationshipLinkingURL>
+                <ArtistRelationshipNote>This is the artist website</ArtistRelationshipNote>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+        <ArtistRelationships>
+            <ArtistRelationshipType>has album</ArtistRelationshipType>
+            <RelationshipLinkingObject>
+                <RelationshipLinkingObjectType>albums</RelationshipLinkingObjectType>
+                <RelationshipLinkingObjectValue>Beat Wave</RelationshipLinkingObjectValue>
+                <RelationshipLinkingObjectURL>https://itunes.apple.com/ca/album/beat-wave/1330258514</RelationshipLinkingObjectURL>
+                <RelationshipLinkingNote>This is the album by the artist</RelationshipLinkingNote>
+            </RelationshipLinkingObject>
+        </ArtistRelationships>
+        <ArtistRelationships>
+            <ArtistRelationshipType>has album</ArtistRelationshipType>
+            <RelationshipLinkingObject>
+                <RelationshipLinkingObjectType>albums</RelationshipLinkingObjectType>
+                <RelationshipLinkingObjectValue>Experimental Ground</RelationshipLinkingObjectValue>
+                <RelationshipLinkingObjectURL>https://itunes.apple.com/ca/album/experimental-ground/1304681234</RelationshipLinkingObjectURL>
+                <RelationshipLinkingNote>This is the album by the artist</RelationshipLinkingNote>
+            </RelationshipLinkingObject>
+        </ArtistRelationships>
+    </ArtistMetadata>
+    <SocialMediaPostMetadata accountSource="Instagram">
+        <PostIdentifier>
+            <PostIdentifierType>URL</PostIdentifierType>
+            <PostIdentifierValue>https://www.instagram.com/p/BrOmSKkAYwL/</PostIdentifierValue>
+        </PostIdentifier>
+        <PostType>painting</PostType>
+        <PostDateCreation>December 10, 2018</PostDateCreation>
+        <PostLanguage lang="English" langTermSource="ISO-639-2">en</PostLanguage>
+        <PostDescription>
+            <PostTitle>naissovibeAcrylic on Canvas - 20 x 20 inches - Naissovibe Collection</PostTitle>
+            <PostDescriptionHastags> #art #artist #artwork #artsy #artfido #artista #artistsoninstagram #artoftheday #artofvisuals #artgallery #artexhibition #newartist #newart #canvas #painting #miamiart #miami #london #nyc #naissovibe #gruabstract #chicago #toronto #montreal #ottawa #quebec #spain #la #california</PostDescriptionHastags>
+        </PostDescription>
+        <PostDescriptionMetadata>
+            <PostMetadataDateAccessed>12-11-2019 10:35:00</PostMetadataDateAccessed>
+            <PostLikes>28</PostLikes>
+            <PostComments>
+                <PostCommentsNotes>There are 2 comments</PostCommentsNotes>
+            </PostComments>
+        </PostDescriptionMetadata>
+        <ObjectMetadata>
+            <ArtType termSource="AAT" termSourceID="300033799">oil paintings</ArtType>
+            <Medium termSource="AAT" termSourceID="300015050">oil paint</Medium>
+            <MaterialsTechnique termSource="AAT" termSourceID="300014078">canvas</MaterialsTechnique>
+            <ObjectSignificance></ObjectSignificance>
+            <ObjectSubjects>
+                <ObjectSubjectValue subjectType="format">painting</ObjectSubjectValue>
+                <ObjectSubjectValue subjectType="topic">Naissovibe Collection</ObjectSubjectValue>
+            </ObjectSubjects>
+        </ObjectMetadata>
+    </SocialMediaPostMetadata>
+    <AdministrativeMetadata>
+        <AdministrativeRights>
+            <AdministrativeRightsType>copyright</AdministrativeRightsType>
+            <AdministrativeRightsValue>(c)AlainGiroux2018</AdministrativeRightsValue>
+        </AdministrativeRights>
+    </AdministrativeMetadata>
+</CAOS>

@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <!-- CAOS: Cataloging Artist on Social Media -->
+        <!-- Prepared by the Library and Information Sciences Master students Shuyi Liu, Stacia McKeever, and Melissa Starr from University of Illinois at Urbana-Champaign -->
+        <!-- Version 1.0, last updated 12/08/2018 -->
+    
+    <!-- Purpose of CAOS schema: To catalog artists as they portray themselves on social media platforms, such as Instagram, meaning the artwork they display, how they display their artwork, and the processes they display on social media. 
+        This schema is intended to document the provenance of the artists’ artistic process on social media and understand their activity and popularity on these platforms. 
+        This schema is intended to be just one piece of information about the artist within the realm of social media platforms, especially Instagram, this is not intended to be the sole source of metadata about he artist. 
+        This schema makes the assumption that there is other metadata records about the artist that goes into more detail about other aspects of the artist and their artwork, this schema focuses on information about the artist’s activity and persona on social media. -->
+    
+    <!-- Intended Audience of CAOS schema: This schema is intended to be used by institutions such as art museums, art galleries, archives, and special collections. 
+        With this audience in mind, this schema makes assumptions that some catalogers will have specialized training in art and cataloging, while others might have minimal in-depth training in these fields. 
+        The schema is designed to have multiple optional fields, so that the cataloger may develop a record that suits the purpose and knowledge of the cataloger. -->
+    <!-- ***********************************************************
+                        ROOT DEFINITION 
+         ***********************************************************-->
+    <xs:element name="CAOS">
+        <xs:annotation>
+            <xs:documentation>
+                CAOS: Cataloging Artists On Social media. CAOS is intended to provide a standardized XML format for cataloging of artists as they portray themselves on social media platforms, such as Instagram, meaning the artwork they display, how they display their artwork, and the processes they display on social media. 
+                This schema is intended to document the provenance of the artists’ artistic process on social media and understand their activity and popularity on these platforms. 
+                This schema is intended to be just one piece of information about the artist within the realm of social media platforms, especially Instagram, this is not intended to be the sole source of metadata about he artist. 
+                This schema makes the assumption that there is other metadata records about the artist that goes into more detail about other aspects of the artist and their artwork, this schema focuses on information about the artist’s activity and persona on social media.
+            </xs:documentation>
+        </xs:annotation>
+     <!-- ***********************************************************
+                        MAIN BODY OF SCHEMA
+          ***********************************************************-->
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ArtistMetadata">
+                    <xs:annotation>
+                        <xs:documentation>
+                            ArtistMetadata: Descriptive Metadata about the artist, intended to fulfil the purpose of documenting information about the artist on a social media platform and outside of the social media platform. 
+                            Information cataloged here is intended to give a basic understanding of the artist, their artwork, their related institutions, and information supplied on social media platforms about them.
+                            Only mandatory fields under this element are: artistIdentifier and artistDiscipline.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ArtistIdentifier" minOccurs="1" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        ArtistIdentifier: A specific name/ID associated with the artist.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ArtistIdentifierType" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ArtistIdentifierType: This is to specify the type of identifier associated with the artist, such as "personal name, Instagram Handle, user name".
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ArtistIdentifierValue" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ArtistIdentifierValue: This is where the actual name/ID/number associated to the artist is inputted.
+                                                    This value should be understandable when related to the identifier type, such as if the type is "personal name", then this value must be a name of person.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute ref="infoSource"></xs:attribute>
+                                    <xs:attribute ref="accountSource"></xs:attribute>
+                                    <xs:attribute ref="termSource"></xs:attribute>
+                                    <xs:attribute ref="termSourceID"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ArtistDiscipline" minOccurs="1" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        ArtistDiscipline: element is intended to be used as an element to describe the type of the cataloged artist. 
+                                        It is recommended to us AAT controlled vocabulary to give a term to the artist type.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute ref="termSource"></xs:attribute>
+                                            <xs:attribute ref="termSourceID"></xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="LinkedInstitution" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        LinkedInstitution: This element is intended to describe the main institution that the artist is associated with and/or the institution associated with requesting the catalog record of this artist.
+                                        For instance, the artist is mostly associated with one Art Museum and so this is the main institution that the cataloger wants to be linked to artist.
+                                        Another example would also be that the creator of this record is associated with an institution that is linked to the artist, and so the catalog wants to highlight this link.
+                                        If institution is linked in this element, then it does not also need to be described in the artistRelationship element too.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="InstitutionType" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    InstitutionType: This is to designate the type of institution being linked, such as "art gallery, museum, university, etc..."
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="InstitutionValue" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    InstitutionValue: The name of the institution.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="InstitutionAddress" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    InstitutionAddress: This is the address of the institution, it can be as minimal as the city of the institution or more descriptive. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute ref="infoSource" use="required"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ArtistValue" minOccurs="0" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        ArtistValue: This is an open-ended element for the purpose of allowing the cataloger/institution to assign a value to the artist.
+                                        The intention of this element is to give a space to describe in a short word/sentence why this artist might be cataloged or why they matter in the space of the cataloging institution.
+                                        Such as one value could be "up-and-coming", which would show that this artist is a promising candidate and they are still early in their artist career, so it might be beneficial to catalog their artist provenance in their early stages of their art career. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="DisplayedAccountInformation" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        DisplayedAccountInformation: This is the information that can be found displayed openly on the social media platform.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="DateAccessed" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    DateAccessed: Date and time of when the cataloger accessed/pulled this information. 
+                                                    Important because the content on social media platforms shifts frequently, so knowing when the cataloger is inputting this information will be useful for future consideration.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ContentFollowers" type="xs:positiveInteger" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                   ContentFollowers: This will be a numeral value associated with how many other individuals are following this artist on the social media platform.
+                                                   This value will only take positive numbers, so input only numbers into this value. 
+                                                   For instance instead of "31.K", put in "31000"; instead of "31,000", put in "31000".
+                                                   Not all social media platforms will have this information, if this category does not exist do not catalog.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ContentFollowing" type="xs:positiveInteger" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                   ContentFollowing: This will be a numeral value associated with how many other individuals the artist is following on the social media platform. 
+                                                   This value will only take positive numbers, so input only numbers into this value. 
+                                                   For instance instead of "31.K", put in "31000"; instead of "31,000", put in "31000".
+                                                   Not all social media platforms will have this information, if this category does not exist do not catalog.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ContentPosts" type="xs:positiveInteger" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ContentPosts: This will be a numeral value associated with how many individual posts the artist has published on the social media platform.
+                                                    This value will only take positive numbers, so input only numbers into this value. 
+                                                    For instance instead of "31.K", put in "31000"; instead of "31,000", put in "31000".
+                                                    Not all social media platforms will have this information, if this category does not exist do not catalog.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute ref="accountSource" use="required"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ArtistSuppliedBioDescription" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                      ArtistSuppliedBioDescription: This is the biography description that the artist has displayed on their account information, it will usually be a brief paragraph or sentence describing themselves or relevant information about themselves.
+                                      Not all social media platforms have this category, but it can be useful information to catalog for showing how the artist portrays themselves and their artwork on social media. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="BioDescriptionDateAccess" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    BioDescriptionDateAccess: This is the date and time associated when the cataloger pulled this information from the social media platform. 
+                                                    It is important to catalog the date/time in order to document when or if there are changes. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="BioDescriptionValue" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    BioDescriptionValue: This element describes the actual description on the social media platform, it should be cataloged exactly as it is written by the artist.
+                                                    For emojis use the shortcode associated with the image. Refer to emojipedia.org for the shortcodes of the emoji. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute ref="accountSource" use="required"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ArtistRelationships" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        ArtistRelationships: Intended to be open-ended element for purposes of showing the relationship of the artist to other institutions, artists, and organizations. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ArtistRelationshipType" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                   ArtistRelationshipType: This is an open-ended element for the purpose describing the type of relationship between this agent/object to the artist.
+                                                   There is no controlled vocabulary so that the cataloger can input either a institution specific term or a generic term. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ArtistRelationshipLinkingAgent" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ArtostRelationshipLinkingAgent: This is the the element for describing the related agent. An agent can be anything other than an object, for example a person, organization, institution, etc...
+                                                    If ArtistRelationship is included in catalog, then either ArtistRelationshipLinkingAgent or ArtistRelationshipLinkingObject must be completed. If ArtistRelationshipLinkingObject is blank then this element must be filled in. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ArtistRelationshipLinkingAgentType" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ArtistRelationshipLinkingAgentType: This is an element for determining the type of agent being describe in this element.
+                                                                This is an important field in order to describe the term that would be associated with who or what the agent is, for instance a type could be an art gallery, museum, person, etc...
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="ArtistRelationshipLinkingAgentValue" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ArtistRelationshipLinkingAgentValue: This is the element for describing the name associated with the agent. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="ArtistRelationshipLinkingURL" type="xs:string" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ArtistRelationshipLinkingURL: This is an optional field for placing an associated URL with the linking agent.
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="ArtistRelationshipNote" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                               ArtistRelationshipNote: This element is an open-ended field, for allowing the cataloger to place any more additional information about the relationship between the artist and this agent.
+                                                               This is an important field for understanding the purpose of why this relationship is being cataloged or offering additional information about the provenance of the artist and this linked agent. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="RelationshipLinkingObject" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    RelationshipLinkingObject: This is the element for describing the relationship between the artist and any object. 
+                                                    The purpose of this element is to show a relationship between an artist and something tangible in the world. 
+                                                    For instance, if the artist has a book published with their artwork in it, this would be the section to show that relationship.
+                                                    If ArtistRelationship is included in catalog, then either ArtistRelationshipLinkingAgent or ArtistRelationshipLinkingObject must be completed. If ArtistRelationshipLinkingAgent is blank then this element must be filled in.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="RelationshipLinkingObjectType" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                               RelationshipLinkingObjectType: This is the element for describing the type of object being linked, for instance if the object is a book, then this would be the section where you state that the object is a book.  
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="RelationshipLinkingObjectValue" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                RelationshipLinkingObjectValue: This is the element for inputting the name of the object, such as the title of a book.
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="RelationshipLinkingObjectURL" type="xs:string" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                RelationshipLinkingObjectURL: This is the element for inputting a related URL for the linked object, this is not mandatory, but recommended for providing extra information about the object. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="RelationshipLinkingNote" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                RelationshipLinkingNote: This is an important element for providing information about the nature or significance of this relationship. It is not mandatory, but highly recommended for clarification purposes. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute ref="accountSource"></xs:attribute>
+                                    <xs:attribute ref="infoSource"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="accountSource" use="required"></xs:attribute>
+                        <xs:attribute ref="infoSource"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SocialMediaPostMetadata" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>
+                            This element is the section of the record for describing the "why" this post is significant to the institution. 
+                            This section intends to document the provenance of the artist's artwork and development on a social media platform. 
+                            This element contains a long list of optional elements for the purpose of offering the cataloger to design this record to be relevant to the purpose of cataloging this post/artist
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="PostIdentifier" minOccurs="1" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        PostIdentifier: This is an element that is used to identify the unique name/ID given to the post.
+                                        It is important to have a unique identifier for the post, so that others may know which post is being linked to the information below.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="PostIdentifierType" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation> 
+                                                    PostIdentifierType: This is the element to specify the type of identifier being described. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="PostIdentifierValue" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostIdentifierValue: This element is used for inputting the value of the identifier.
+                                                    For instance if the identifier type was a URL, this would be the element for inputting the URL string.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute ref="infoSource"></xs:attribute>
+                                    <xs:attribute ref="accountSource"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PostType" minOccurs="1" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        PostType: This element is important for designating the type of this post.
+                                        The rationale behind this element is for having an area for the cataloger to describe the post in terms useful for their cataloging purposes. 
+                                        It is important to be able to quickly describe the post for understanding the artist's process, for instance a post type could be "in progress" or "sketch" to show that this artwork is not yet completed. 
+                                        This is good element to show the provenance of the artist process in creating a certain artwork.
+                                        There is no set controlled vocabulary for this element, due to allowing the cataloger to describe the type to suit their purposes, but there is a recommended vocabulary list:
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="PostDateCreation">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        PostDateCreation: This is the set date for when the post was published on the social media platform. Depending upon when the post was created, the date and time may be differently displayed on the social media platform.
+                                        When documenting the date creation, there is no set standard, so it is up to the cataloger's discretion. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute ref="infoSource"></xs:attribute>
+                                            <xs:attribute ref="accountSource"></xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Events" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Events: This element is intended to show the value and significance of why the post is important, this is an important element in describing the provenance of the artist on a social media platform.
+                                        The rationale behind this element is to give a space inside the record for describing the events behind the creation of the post or artwork within the post. 
+                                        For instance, if an artist decided to change the type of medium they worked with and the cataloger wanted to document the artist's shift in style, then they could include an event that describes how the artist began using a different medium in this social media post and why it is significant to artist's work. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="EventType" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    EventType: This is an element intended to be used to show the what type of event is being cataloged.
+                                                    There is no set vocabulary for this element, due to allowing the cataloger to describe the type of event as it pertains to their needs.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="EventSignificance" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    EventSignificance: Element for designating why this event is important.
+                                                    This element is important for understanding the reasoning behind cataloging this event. 
+                                                    With this element, it can describe why this event is important to the cataloger or to the artist. 
+                                                    Highly recommended to providing information about the provenance of the artist. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PostLanguage" default="en" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        PostLanguage: Element for describing the language of the post. This is repeatable so that all languages used in post can be cataloged. 
+                                        It is recommended to use the attributes for designating the code used for language.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute ref="lang"></xs:attribute>
+                                            <xs:attribute ref="langTermSource"></xs:attribute>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PostDescription" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        PostDescription: This element is intended to document the information the artist supplied on the description they created for their post.
+                                        Not all social media platforms allow for artist to give a description to their post, but on Instagram this is a common occurrence and contains a lot of information about how the artist is portraying their artwork and further information on the provenance of their artwork. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="PostTitle" minOccurs="0" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostTitle: This is the element for describing the artist supplied title to their post. 
+                                                    When inputting this information, it should be cataloged exactly as it appears on the post.
+                                                    For documenting emojis use the shortcode associated with the image. Refer to emojipedia.org for the shortcodes of the emoji. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="PostDescriptionHastags" minOccurs="0" maxOccurs="unbounded" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostDescriptionHasttags: This is the element for documenting any artist supplied hashtags they included in their post's description.
+                                                    This is important to document the way the artist presents themselves and their artwork on the social media platform. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="PostDescriptionLinks" minOccurs="0" maxOccurs="unbounded" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostDescriptionLinks: This is the element for documenting any artist supplied links they included in their post description. 
+                                                    This is important for showing if the post is linked to anything else or if the content of the post is shown on different sites. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PostDescriptionMetadata" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        PostDescriptionMetadata: This element is intended to document the information about how other people have interacted with the post.
+                                        This is an important element in describing the popularity or trending value of the post itself. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="PostMetadataDateAccessed" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                   PostMetadataDateAccessed: This is an important element for describing when the cataloger pulled the information from the post. 
+                                                   It is important to document the date of when the information was pulled, since the information below is constantly changing based on how other users interact with the post. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="PostViews" type="xs:positiveInteger" minOccurs="0" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostViews: This element is only related to if the post's content is a video. 
+                                                    This is a numeral value associated with how many people have viewed the video. 
+                                                    This information is attainable from the social media platform itself. 
+                                                    Only positive integers are allowed in this field. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="PostLikes" type="xs:positiveInteger" minOccurs="1" maxOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostLikes: This element is intended to document the numeral value associated with how many other users have "liked" this post.
+                                                    Other social media platforms may describe this term differently, but this is the section that records how many people how somehow shown their interest or approval of the post.
+                                                    Only positive integers are allowed in this field. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="PostComments" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostComments: This is an element intended to describe information about the comments associated with the post itself.
+                                                    This can be a useful element for showing how other people interact with this post and what they are saying about the contents of the post.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="PostCommentsNotes" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                PostCommentsNotes: This is an open-ended element intended to document information about the comments of the post. 
+                                                                This is a space where the cataloger can input any information they deem necessary about the comments. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ObjectMetadata" minOccurs="1" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        This element is repeatable for each individual image/video in post on social media platform.
+                                        This element is intended to fulfil the purpose of describing the information about the post's content or post's object.
+                                        After describing why the post is valuable in SocialMediaPostMetadata, this element is important in cataloging what is happening in the actual post. 
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ArtType" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ArtType: This is the element for designating the type of artwork being described. 
+                                                    Recommended to use AAT controlled vocabulary to show art type, such as "painting, sculpture, photograph". 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute ref="termSourceID"></xs:attribute>
+                                                        <xs:attribute ref="termSource"></xs:attribute>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Medium" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    Medium: This element refers to the materials that are used to create a work of art.
+                                                    For cataloging the provenance of the artist, it is important to cataloging the medium that they use in the process of creating their artwork.
+                                                    Recommended to use AAT controlled vocabulary.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute ref="termSource"></xs:attribute>
+                                                        <xs:attribute ref="termSourceID"></xs:attribute>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="MaterialsTechnique" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    MaterialsTechnique: This element refers to the physical objects that an artist uses when creating his or her works, some such examples would be: canvas, marble, construction paper, metal, etc...
+                                                    This element also refers to the techniques, processes, or methods used in the artwork creation.
+                                                    Recommended to use AAT controlled vocabulary.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute ref="termSource"></xs:attribute>
+                                                        <xs:attribute ref="termSourceID"></xs:attribute>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="ObjectSignificance" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ObjectSignificance: This element is helpful in describing what about the object is so noteworthy that it had to be cataloged.
+                                                    Object significance and events element might be similar, but this element is useful for describing in detail the reasoning behind the cataloging of this particular object. 
+                                                    Intended to be open-ended to fit the needs of the cataloger.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ObjectContributor" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                   ObjectContributor: Element is used for describing if another artist helped contribute in some way to the artwork or artist provenance. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ObjectContributorType" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                               ObjectContributorType: Element for describing the nature of how this person contributed. This is an open ended field, intended to allow for the cataloger to describe the way in which this contributor is related to the artwork/post creation.
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="objectContributorValue" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ObjectContributorValue: This is the name associated with the contributor. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="ObjectContributorURL" type="xs:string" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ObjectContributorURL: This is any URL associated with the contributor, such as their artist website. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="ObjectContributorNote" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ObjectContributorNote: This element is intended to add further information to the nature of how this person contributed to the creation of the artwork or post.
+                                                                This is important for documenting the provenance of the artist's process or interaction with other artist on social media. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="ObjectWarnings" minOccurs="0"  maxOccurs="unbounded" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    Object Warnings: This is the element used for describing if there are any mature warnings the cataloger wishes to describe the post. 
+                                                    Such as nudity, violence, or sexual behavior. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ObjectSubjects" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ObjectSubjects: This is the element for cataloging the subject matter of the post. 
+                                                    The purpose of this element is to offer a space for catalogers to assign subjects to the post/object in order to document the artist's artwork. 
+                                                    Documenting subjects can important for analyzing what is happening in the artwork and/or the type of artwork being created. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ObjectSubjectValue" minOccurs="1" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                               ObjectSubjectValue: This is the element for inputting the information about the subjects. It is mandatory to use the attribute "subjectType" in order to understand the type of subject being assigned to the object. 
+                                                               For instance, one subject could be "comic" and the subjectType would be "format", this could be an important distinction to document in understanding the different formats the artist portrays their artwork. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:string">
+                                                                    <xs:attribute ref="subjectType" use="required"></xs:attribute>
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="ObjectLocation" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ObjectLocation: This element is intended to be used for describing any locations associated with the post/object. 
+                                                    For instance, if the artwork is a photograph of a place, then this would be section to catalog the location of the photograph subject matter. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ObjectLocationType" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                              ObjectLocationType: This element is used in describing how the location value is related to the object/post.
+                                                              For instance, if the artwork in the post is a drawing of a place, then in this element the location would be described as "drawing of".
+                                                              If the artwork in the post is a picture of the artist drawing at a certain location, then the type would be "drawn at".
+                                                              This is an useful element for adding more information to the provenance of the artwork or describing the artistic process of the artist. 
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="ObjectLocationValue" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ObjectLocationValue: This is the element for describing the location's name or address. 
+                                                                Any way of inputting information is accepted, as long as the value makes sense in relating it to a location.
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="ObjectPeople" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    ObjectPeople: The purpose of the element is in allowing for the documentation of people in the object itself. 
+                                                    For instance if object is a painting of someone, then this would be the element to document the name of the person.
+                                                    This is an important element for documenting the people who appear in the artwork. 
+                                                    This is different from linked relationships and subjects, because this is dedicated to documenting how the person appears in the artwork and who they are. 
+                                                </xs:documentation>
+                                            </xs:annotation> 
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ObjectPeopleType" type="xs:string">
+                                                      <xs:annotation>
+                                                          <xs:documentation>
+                                                             ObjectPeopleType: This is the element to document how the person appears in the post/artwork.
+                                                             For instance, if the post is a photograph, and the person appears in the photograph in a meaningful way, then the type could be "is photograph of" or "model in"
+                                                             This purpose of this element is describing how and why this person is being documented in this record. 
+                                                          </xs:documentation>
+                                                      </xs:annotation>  
+                                                    </xs:element>
+                                                    <xs:element name="ObjectPeopleValue" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                ObjectPeopleValue: This element is intended to be the section where the person's name is documented.
+                                                            </xs:documentation>
+                                                        </xs:annotation>   
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="PostRelationships" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    PostRelationhips: This element is designed to document any relationships between the post being document and other agents or objects. This is different from ArtistRelationships, because this element's purpose is to represent other relationships between the post. 
+                                                    For instance, within the post, the artist may be having a promotional event for their artwork being displayed somewhere that was originally not linked to them. So this would be a useful relationship to show how this social media post is promoting the artist's artwork at a different institution. 
+                                                </xs:documentation>
+                                            </xs:annotation> 
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="PostRelationshipType" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                PostRelationshipType: This is an open-ended element for the purpose of describing the type of relationship between this agent/object and the social media post.
+                                                            </xs:documentation>
+                                                        </xs:annotation> 
+                                                    </xs:element>
+                                                    <xs:element name="PostRelationshipLinkingAgent" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                PostRelationshipLinkingAgent: This is the element for describing the related agent. An agent can be anything other than an object, for example a person, organization, institution, etc...
+                                                            </xs:documentation>
+                                                        </xs:annotation> 
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="PostRelationshipLinkingAgentType" type="xs:string">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipLinkingAgentType: This is an element for determining the type of agent being describe in this element.
+                                                                            This is an important field in order to describe the term that would be associated with who or what the agent is, for instance a type could be an art gallery, museum, person, etc...
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="PostRelationshipLinkingAgentValue" type="xs:string">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipLinkingAgentValue: This is the element for describing the name associated with the agent. 
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="PostRelationshipLinkingAgentURL" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipLinkingAgentURL: This is an optional field for placing an associated URL with the linking agent.
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="PostRelationshipNote" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipNote: This element is an open-ended field, for allowing the cataloger to place any more additional information about the relationship between the artist and this agent.
+                                                                            This is an important field for understanding the purpose of why this relationship is being cataloged or offering additional information about the provenance of the artist and this linked agent. 
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="PostRelationshipLinkingObject" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                PostRelationshipLinkingObject: This is the element for describing the related object to the post. For instance a book that the artist is promoting in a post.
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="PostRelationshipLinkingObjectType" type="xs:string">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipLinkingObjectType: This is an element for determining the type of object being described in this element.
+                                                                            This is an important field in order to describe the term that would be associated with what the object is, such as art piece, book, etc....  
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="PostRelationshipLinkingObjectValue" type="xs:string">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipLinkingObjectValue: This is the element for describing the name associated with the object.  
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="PostRelationshipLinkingObjectURL" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipLinkingObjectURL: This is an optional field for placing an associated URL with the linking object.
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                                <xs:element name="PostRelationshipNote" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            PostRelationshipNote: This element is an open-ended field, for allowing the cataloger to place any more additional information about the relationship between the artist and this object.
+                                                                            This is an important field for understanding the purpose of why this relationship is being cataloged or offering additional information about the provenance of the artist and this linked object.
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="accountSource" use="required"></xs:attribute>
+                        <xs:attribute ref="infoSource"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="AdministrativeMetadata" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>
+                            AdministrativeMetadata: This element is a container for all information related to the rights associated with this artist, artwork or social media post.
+                            This is an optional field, because the rights information might not be pertinent to the purpose of the cataloger. 
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="AdministrativeRights" minOccurs="1" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                       AdministrativeRights: This element is intended to describe any rights information associated with the artist, artwork, and social media platform.
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="AdministrativeRightsType" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    AdministrativeRightsType: This element is for designating what type of rights is being cataloged, such as licensing rights, copy rights, etc...
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="AdministrativeRightsValue" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>
+                                                    AdministrativeRightsValue: This is the element for placing any related rights information. 
+                                                    The purpose of this is to document the rights belong to the artist, their artwork, the social media platform or any other rights related to the information documented here. 
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="accountSource" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                This attribute is intended to show what account is the source of information for the following element.
+                This is useful in designating which social media platform is being viewed for grabbing information to be placed into catalog. 
+                The usual accountSource will be "Instagram" for these records, but other examples could be "websites, Twitter, Tumblr, etc..."
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="termSource" type="xs:string"></xs:attribute>
+    <xs:attribute name="termSourceID" type="xs:string"></xs:attribute>
+    <xs:attribute name="dateSource" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Source for where date is being grabbed, most common for this record will be "Instagram"
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="infoSource" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Attribute to provide name for source that information is being pulled from, most common will be URL or Social Media platform.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="lang" type="xs:string"></xs:attribute>
+    <xs:attribute name="langTermSource" type="xs:string"></xs:attribute>
+    <xs:attribute name="subjectType" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Recommended to choose from the following options for subjectType: genre, format, topic, subject matter.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="type" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Attribute to refer to the type of way the material or technique is being used in the artwork and/or artist process.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="contributorRole" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                Attribute for specifying the role the contributor took in the process or creation of artwork. 
+                There is no set controlled vocabulary for this element, it is intended to be open-ended for creating flexibility in catalog.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="genreType" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>
+                This attribute is used only under the element "artType" and is intended for the purpose of describing the genre or artist movement associated with art type.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="xsi" type="xs:string"></xs:attribute>
+    <xs:attribute name="CAOS" type="xs:string"></xs:attribute>
+    <xs:attribute name="schemaLocation" type="xs:string"></xs:attribute>
+</xs:schema>

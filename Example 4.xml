@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CAOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/Melissa/Documents/MLIS%20School%20Work/Fall%202018/562%20Metadata%20Theory/Metadata%20Schema%20Creation%20Final%20Project/CAOS%20XSD%20Document%20FINAL.xsd">
+    <ArtistMetadata accountSource="Instagram">
+        <ArtistIdentifier accountSource="Instagram">
+            <ArtistIdentifierType>username</ArtistIdentifierType>
+            <ArtistIdentifierValue>@lavendarladysupreme</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistIdentifier>
+            <ArtistIdentifierType>personal name</ArtistIdentifierType>
+            <ArtistIdentifierValue>Leah Guadagnoli</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistIdentifier accountSource= "Instagram">
+            <ArtistIdentifierType>owner_user_id</ArtistIdentifierType>
+            <ArtistIdentifierValue>188988917</ArtistIdentifierValue>
+        </ArtistIdentifier>
+        <ArtistDiscipline termSource="AAT" termSourceID="300163347">mixed media</ArtistDiscipline>
+        <ArtistValue>up-and-coming artist of interest</ArtistValue>
+        <DisplayedAccountInformation accountSource="Instagram">
+            <DateAccessed>12-10-2018 T 19:52:34 </DateAccessed>
+            <ContentFollowers>6202</ContentFollowers>
+            <ContentFollowing>1927</ContentFollowing>
+            <ContentPosts>719</ContentPosts>
+        </DisplayedAccountInformation>
+        <ArtistSuppliedBioDescription accountSource="Instagram">
+            <BioDescriptionDateAccess>12-10-2018</BioDescriptionDateAccess>
+            <BioDescriptionValue>Leah Guadagnoli; Artist based in Brooklyn, NY | Founder of @the_maple_terrace; www.leahguadagnoli.com</BioDescriptionValue>
+        </ArtistSuppliedBioDescription>
+        <ArtistRelationships>
+            <ArtistRelationshipType>has website</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>website</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>http://www.leahguadagnoli.com/</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>http://www.leahguadagnoli.com/</ArtistRelationshipLinkingURL>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+        <ArtistRelationships>
+            <ArtistRelationshipType>attended residency</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>residency</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>Yaddo</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipLinkingURL>https://www.yaddo.org/</ArtistRelationshipLinkingURL>
+                <ArtistRelationshipNote>Leah Guadagnoli was a resident at Yaddo in 2015, which springboarded her career</ArtistRelationshipNote>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+        <ArtistRelationships>
+            <ArtistRelationshipType>developed professional relationships</ArtistRelationshipType>
+            <ArtistRelationshipLinkingAgent>
+                <ArtistRelationshipLinkingAgentType>professional relationships</ArtistRelationshipLinkingAgentType>
+                <ArtistRelationshipLinkingAgentValue>artists</ArtistRelationshipLinkingAgentValue>
+                <ArtistRelationshipNote>The artist identifies the beginning of professional relationships made to the following 
+                    artists during her time at Yaddo: Gyan Shrosbee, Gaby Collins-Fernandez, Ron Baron, Matthew Rankin, and Meridith Maran</ArtistRelationshipNote>
+            </ArtistRelationshipLinkingAgent>
+        </ArtistRelationships>
+    </ArtistMetadata>
+    <SocialMediaPostMetadata accountSource="Instagram">
+        <PostIdentifier>
+            <PostIdentifierType>URL</PostIdentifierType>
+            <PostIdentifierValue>https://www.instagram.com/p/BQBfpPpjX7-/</PostIdentifierValue>
+        </PostIdentifier>
+        <PostIdentifier infoSource="Instagram">
+            <PostIdentifierType>fb:app_ID</PostIdentifierType>
+            <PostIdentifierValue>124024574287414</PostIdentifierValue>
+        </PostIdentifier>
+        <PostType>Process Documentation</PostType>
+        <PostDateCreation accountSource="Instagram">February 2, 2017</PostDateCreation>
+        <Events>
+            <EventType>residency</EventType>
+            <EventSignificance>This post is documentation of the artist's time spent at Yaddo in 2015 and provides a 
+                view of the artist's studio and an in progress view of a significant piece in the artist's oeuvre. Title: It Rhymes with Shadow  </EventSignificance>
+        </Events>
+        <PostLanguage lang= "English" langTermSource="ISO-639-2">en</PostLanguage>
+        <PostDescription>
+            <PostTitle>#TBT to August 2015 when I was fortunate to be a resident artist at Yaddo. 
+                Best summer of my life @gyanshrosbree @gmercedescf @mitchissmo @ronbaronstudio 
+                @rankinoscope @thehoodiehijack @kendall120 @meredithmaran</PostTitle>
+            <PostDescriptionHastags>#TBT</PostDescriptionHastags>
+            <PostDescriptionLinks>@gyanshrosbree @gmercedescf @mitchissmo @ronbaronstudio 
+                @rankinoscope @thehoodiehijack @kendall120 @meredithmaran; Yaddo (location)</PostDescriptionLinks>
+            <!-- should these be separate or together. If separated I could link to the artists websites?  -->
+        </PostDescription>
+        <PostDescriptionMetadata>
+            <PostMetadataDateAccessed>12-10-2018 T 19:52:34</PostMetadataDateAccessed>
+            <PostLikes>319</PostLikes>
+            <PostComments>
+                <PostCommentsNotes>There are 5 comments; 2 comments are from tagged artists</PostCommentsNotes>
+            </PostComments>
+        </PostDescriptionMetadata>
+        <ObjectMetadata>
+            <ArtType termSource="AAT" termSourceID="300163347">mixed media</ArtType>
+            <Medium termSource="AAT" termSourceID="300047265">soft sculpture</Medium>
+            <Medium termSource="AAT" termSourceID="300047090">sculpture</Medium>
+            <Medium termSource="AAT" termSourceID="300010332">two-dimensional</Medium>
+            <MaterialsTechnique termSource="AAT" termSourceID="300108127">Abstract (fine arts style)</MaterialsTechnique>
+            <ObjectSignificance>This piece documents a shift in Guadagnoli's work that occured during her time in residence at Yaddo</ObjectSignificance>
+            <PostRelationships>
+                <PostRelationshipType>residency</PostRelationshipType>
+                <PostRelationshipLinkingAgent>
+                    <PostRelationshipLinkingAgentType>residency</PostRelationshipLinkingAgentType>
+                    <PostRelationshipLinkingAgentValue>Yaddo</PostRelationshipLinkingAgentValue>
+                    <PostRelationshipLinkingAgentURL>https://www.yaddo.org/</PostRelationshipLinkingAgentURL>
+                    <PostRelationshipNote>Yaddo is an artists' community located on a 400 acre estate in Saratoga Springs, New York</PostRelationshipNote>
+                </PostRelationshipLinkingAgent>
+                <PostRelationshipLinkingObject>
+                    <PostRelationshipLinkingObjectType>was created at</PostRelationshipLinkingObjectType>
+                    <PostRelationshipLinkingObjectValue>It Rhymes with Shadow</PostRelationshipLinkingObjectValue>
+                    <PostRelationshipLinkingObjectURL>http://www.leahguadagnoli.com/2015.html</PostRelationshipLinkingObjectURL>
+                </PostRelationshipLinkingObject>
+            </PostRelationships>
+        </ObjectMetadata>
+    </SocialMediaPostMetadata>
+    <AdministrativeMetadata>
+        <AdministrativeRights>
+            <AdministrativeRightsType>copyright</AdministrativeRightsType>
+            <AdministrativeRightsValue>©LeahGuadagnoli2018</AdministrativeRightsValue>
+        </AdministrativeRights>
+    </AdministrativeMetadata>
+</CAOS>
